@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Mini Banner -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0066FF"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvBookingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket ID: #TRX475159"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:typeface="monospace"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAID (Confirmed)"
+                android:textColor="#2E7D32"
+                android:background="#FFFFFF"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <!-- Body -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/ivMiniQr"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAirline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Biman Bangladesh Airlines"
+                    android:textColor="#111111"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvFlightDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dhaka ➔ Cox's Bazar | 2026-08-19"
+                    android:textColor="#0066FF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp" />
+
+                <TextView
+                    android:id="@+id/tvPassenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passenger: rafat arif"
+                    android:textColor="#444444"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvSeatInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat: 12A | Class: Business"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Cancel Ticket"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#D32F2F"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivMiniQr"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="QR Code Preview" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

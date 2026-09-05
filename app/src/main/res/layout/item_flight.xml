@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/surfaceColor"
+    app:strokeColor="@color/cardStroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top Header: Airline & Flight ID + Class Badge -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/tvAirlineName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Biman Bangladesh Airlines"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F172A" />
+
+                <TextView
+                    android:id="@+id/tvFlightId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight: BG-001"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#64748B"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvFlightClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Business"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#0066FF"
+                android:background="#E0EDFF"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+        </RelativeLayout>
+
+        <!-- Route & Time Flight Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:background="#F8FAFC"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDepartureTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00 AM"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F172A" />
+
+                <TextView
+                    android:id="@+id/tvFromCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Departure"
+                    android:textSize="12sp"
+                    android:textColor="#64748B" />
+            </LinearLayout>
+
+            <!-- Flight Icon Indicator -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✈️ ➔"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Direct"
+                    android:textSize="10sp"
+                    android:textColor="#94A3B8" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tvArrivalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09:00 AM"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F172A" />
+
+                <TextView
+                    android:id="@+id/tvToCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arrival"
+                    android:textSize="12sp"
+                    android:textColor="#64748B" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- AI Flight Delay Risk Predictor Badge -->
+        <LinearLayout
+            android:id="@+id/layoutDelayPredictor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:background="#F1F5F9"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/tvDelayIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🟢"
+                android:textSize="12sp"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/tvDelayPredictorText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="AI Delay Prediction: 95% On-Time (Low Delay Risk)"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#334155"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Insights 📊"
+                android:textSize="10sp"
+                android:textColor="#0066FF"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E2E8F0"
+            android:layout_marginVertical="10dp" />
+
+        <!-- Price & Action Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fare per Person"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 5,200.00"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBookNow"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Book Ticket ➔"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#0066FF"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

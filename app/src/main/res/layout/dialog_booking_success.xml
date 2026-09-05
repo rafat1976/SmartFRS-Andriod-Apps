@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@android:drawable/checkbox_on_background"
+        app:tint="#2E7D32"
+        android:contentDescription="Success" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Booking Successful!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#2E7D32"/>
+
+    <TextView
+        android:id="@+id/tvSuccessPnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ticket ID: PNR123456"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A copy of your ticket has been sent to your email and mobile number."
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:alpha="0.7"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:text="Back to Home"
+        app:cornerRadius="8dp"
+        android:backgroundTint="@color/primaryColor" />
+
+</LinearLayout>

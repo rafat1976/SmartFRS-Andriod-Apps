@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".FlightListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Simple Custom Toolbar with Back Button -->
+        <RelativeLayout
+            android:id="@+id/toolbarBg"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/primaryColor"
+            android:paddingHorizontal="12dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Available Flights"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWeatherStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="🌤️ Weather"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:paddingHorizontal="10dp"
+                app:backgroundTint="#33FFFFFF"
+                app:cornerRadius="18dp" />
+        </RelativeLayout>
+
+        <!-- Destination Weather Quick Alert Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWeatherAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#FFF3CD"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#FFEBAA"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvWeatherIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌤️"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvWeatherTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destination Weather Status"
+                        android:textStyle="bold"
+                        android:textColor="#856404"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/tvWeatherDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap to view live weather status for all BD airports."
+                        android:textColor="#856404"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All ➔"
+                    android:textColor="#856404"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFlights"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_flight" />
+
+    </LinearLayout>
+
+    <!-- Persistent AI Support FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_ai_support"
+        app:backgroundTint="#1A1A1A"
+        app:tint="@null"
+        app:fabCustomSize="56dp"
+        android:contentDescription="Support" />
+
+</RelativeLayout>

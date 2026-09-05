@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar with Back Navigation Icon -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#0066FF"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:navigationIconTint="@color/white"
+            app:title="Secure Payment Gateway"
+            app:titleTextColor="@color/white" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Booking Amount Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvPnrDisplay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Booking PNR: #J2XR81 | Seat: 18A (Window)"
+                            android:textColor="#0066FF"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Total Amount to Pay"
+                                android:textColor="#666666"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tvTotalAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="৳ 5200.00"
+                                android:textColor="#2E7D32"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Method Selection Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Payment Method"
+                    android:textColor="#1A1A2E"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 3 Payment Method Radio Buttons -->
+                <RadioGroup
+                    android:id="@+id/rgPaymentMethods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <!-- Option 1: bKash -->
+                    <RadioButton
+                        android:id="@+id/rbBkash"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="bKash (Mobile Wallet)"
+                        android:textColor="#E2136E"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingStart="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/radio_bg"
+                        android:buttonTint="#E2136E"
+                        android:checked="true" />
+
+                    <!-- Option 2: Nagad -->
+                    <RadioButton
+                        android:id="@+id/rbNagad"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Nagad (Mobile Wallet)"
+                        android:textColor="#F7941D"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingStart="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/radio_bg"
+                        android:buttonTint="#F7941D" />
+
+                    <!-- Option 3: Bank -->
+                    <RadioButton
+                        android:id="@+id/rbBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Bank Card (Visa / Mastercard)"
+                        android:textColor="#1A1A2E"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingStart="16dp"
+                        android:background="@drawable/radio_bg"
+                        android:buttonTint="#1A1A2E" />
+                </RadioGroup>
+
+                <!-- DYNAMIC FORM 1: bKash Interface -->
+                <LinearLayout
+                    android:id="@+id/layoutBkashForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="#E2136E"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bKash Account Payment"
+                                android:textColor="#E2136E"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="12dp"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="bKash Mobile Number"
+                                android:layout_marginBottom="12dp"
+                                app:boxStrokeColor="#E2136E">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etBkashNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="phone"
+                                    android:maxLength="11" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="bKash PIN"
+                                app:passwordToggleEnabled="true"
+                                app:boxStrokeColor="#E2136E">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etBkashPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="numberPassword"
+                                    android:maxLength="5" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- DYNAMIC FORM 2: Nagad Interface -->
+                <LinearLayout
+                    android:id="@+id/layoutNagadForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="#F7941D"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nagad Account Payment"
+                                android:textColor="#F7941D"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="12dp"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Nagad Mobile Number"
+                                android:layout_marginBottom="12dp"
+                                app:boxStrokeColor="#F7941D">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etNagadNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="phone"
+                                    android:maxLength="11" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Nagad PIN"
+                                app:passwordToggleEnabled="true"
+                                app:boxStrokeColor="#F7941D">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etNagadPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="numberPassword"
+                                    android:maxLength="5" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- DYNAMIC FORM 3: Bank (Visa / Mastercard) Interface -->
+                <LinearLayout
+                    android:id="@+id/layoutBankForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="#1A1A2E"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bank Card Payment"
+                                    android:textColor="#1A1A2E"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Auto Card Detector Badge -->
+                                <TextView
+                                    android:id="@+id/tvCardTypeDetector"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="💳 Card"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:background="#3F51B5"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"/>
+                            </RelativeLayout>
+
+                            <!-- Card Number -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Card Number (Type 4... for Visa, 5... for Mastercard)"
+                                android:layout_marginBottom="12dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etCardNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:maxLength="8" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <!-- CVC and Cardholder Name Row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:baselineAligned="false">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginEnd="6dp"
+                                    android:hint="CVC / CVV"
+                                    android:layout_marginBottom="12dp">
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etCvcNumber"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="number"
+                                        android:maxLength="4" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginStart="6dp"
+                                    android:hint="Cardholder Name"
+                                    android:layout_marginBottom="12dp">
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etCardHolderName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="textPersonName" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Card PIN -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="ATM / Card PIN"
+                                app:passwordToggleEnabled="true">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etBankPin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="numberPassword"
+                                    android:maxLength="6" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Dynamic Pay Now & Confirm Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPayNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Pay Now &amp; Confirm"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#E2136E"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100% Encrypted &amp; Secure Payment Gateway."
+                    android:textSize="12sp"
+                    android:textColor="#9E9E9E"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="16dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Persistent AI Support FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_ai_support"
+        app:backgroundTint="#1A1A1A"
+        app:tint="@null"
+        app:fabCustomSize="56dp"
+        android:contentDescription="Support" />
+
+</RelativeLayout>

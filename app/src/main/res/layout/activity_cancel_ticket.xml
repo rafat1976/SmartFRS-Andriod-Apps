@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar with Back Navigation Icon -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#0066FF"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:navigationIconTint="@color/white"
+            app:title="Cancel Flight Ticket"
+            app:titleTextColor="@color/white" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Search Section Matching Python cancellation_window -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cancel Reservation"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0066FF"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enter Passport Number and Ticket ID to cancel booking"
+                            android:textSize="13sp"
+                            android:textColor="#666666"
+                            android:layout_marginBottom="16dp"/>
+
+                        <!-- Passport No -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Passport No"
+                            android:layout_marginBottom="12dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCancelPassport"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapCharacters" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Ticket ID -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Ticket ID (TRX...)"
+                            android:layout_marginBottom="16dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCancelTicketId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapCharacters" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCancelSearchTicket"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"
+                            android:text="🔍 Search Ticket"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="12dp"
+                            android:backgroundTint="#0066FF" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <ProgressBar
+                    android:id="@+id/pbCancelSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="20dp"
+                    android:visibility="gone" />
+
+                <!-- Boarding Ticket Result Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCancelTicketResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Header Banner -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#0066FF"
+                            android:orientation="horizontal"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvCancelResAirline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Biman Bangladesh Airlines"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvCancelResStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#2E7D32"
+                                android:text="PAID (Confirmed)"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="4dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:id="@+id/tvCancelResPnr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ticket ID: #TRX123456 📋"
+                                    android:textStyle="bold"
+                                    android:textColor="#0066FF"
+                                    android:textSize="14sp"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
+
+                                <TextView
+                                    android:id="@+id/tvCancelPrice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="৳ 4,500.00"
+                                    android:textStyle="bold"
+                                    android:textColor="#2E7D32"
+                                    android:textSize="16sp"/>
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#EEEEEE"
+                                android:layout_marginBottom="12dp"/>
+
+                            <TextView
+                                android:id="@+id/tvCancelResPassenger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Passenger: Name (Passport: 42240123)"
+                                android:textStyle="bold"
+                                android:textSize="14sp"
+                                android:textColor="#1A1A2E"/>
+
+                            <TextView
+                                android:id="@+id/tvCancelSeat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Seat Number: 12A (Window)"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#2E7D32"
+                                android:textStyle="bold"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tvCancelResRoute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Route: Dhaka ➔ Sylhet [Economy]"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#555555"
+                                android:textSize="14sp"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnDoCancel"
+                                android:layout_width="match_parent"
+                                android:layout_height="54dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Cancel Ticket"
+                                android:backgroundTint="#C62828"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                app:cornerRadius="12dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Persistent AI Support FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_ai_support"
+        app:backgroundTint="#1A1A1A"
+        app:tint="@null"
+        app:fabCustomSize="56dp"
+        android:contentDescription="Support" />
+
+</RelativeLayout>

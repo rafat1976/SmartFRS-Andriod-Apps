@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Premium Gradient Header Section -->
+            <View
+                android:id="@+id/headerBg"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@color/primaryColor"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/ivHeaderLogo"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/app_logo"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnLogout"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Logout"
+                android:src="@android:drawable/ic_lock_power_off"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back 👋"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="@id/ivHeaderLogo"
+                app:layout_constraintBottom_toTopOf="@id/tvSubTitle"
+                app:layout_constraintStart_toEndOf="@id/ivHeaderLogo"
+                app:layout_constraintEnd_toStartOf="@id/btnLogout"/>
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Smart Flight Reservation System"
+                android:textSize="12sp"
+                android:textColor="#E0EDFF"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintBottom_toBottomOf="@id/ivHeaderLogo"
+                app:layout_constraintStart_toEndOf="@id/ivHeaderLogo"
+                app:layout_constraintEnd_toStartOf="@id/btnLogout"/>
+
+            <!-- Main Menu Options Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardQuickActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="-60dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/surfaceColor"
+                app:strokeColor="@color/cardStroke"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toBottomOf="@id/headerBg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Flight Services"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#0F172A"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Option 1: Search Flight -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSearchFlight"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:text="🔍 Search Flight"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="@color/primaryColor"
+                        app:backgroundTint="#F0F6FF"/>
+
+                    <!-- Option 2: Booking Flight -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBookingFlight"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:text="🎟️ Direct Booking Flight"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#2E7D32"
+                        app:backgroundTint="#F0FDF4"/>
+
+                    <!-- Option 3: Cancel Booking -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelTicket"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:text="❌ Cancel Ticket"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        android:textColor="#C62828"
+                        app:backgroundTint="#FEF2F2"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Promo Offer Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintTop_toBottomOf="@id/cardQuickActions"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <!-- Offer 1: bKash / Nagad 10% Discount -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#0066FF"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🎉 10% Instant Discount Offer!"
+                            android:textColor="#FFD700"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Book 4 tickets together via bKash or Nagad to get 10% instant discount"
+                            android:textColor="@color/white"
+                            android:textSize="12.5sp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Offer 2: CityMax Card Free Airport Lounge -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#1A1A2E"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💳 Free Airport Lounge Access!"
+                            android:textColor="#FFD700"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pay with CityMax Card &amp; enjoy complimentary Airport Lounge access"
+                            android:textColor="#E2E8F0"
+                            android:textSize="12.5sp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Persistent AI Support FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_ai_support"
+        android:contentDescription="Support"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="#1A1A1A"
+        app:tint="@null"
+        app:fabCustomSize="58dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

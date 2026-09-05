@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="24dp">
+
+                <!-- Header Icon -->
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@android:drawable/ic_dialog_email"
+                    app:tint="#0066FF"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✉️ Check Your Email Inbox"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#0066FF"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Firebase verification email sent to:"
+                    android:textColor="#666666"
+                    android:textSize="13sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvTargetEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="user@gmail.com"
+                    android:textColor="#111111"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Instruction Box -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F0F4FF"
+                    android:padding="16dp"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📩 Quick Steps to Activate Account:"
+                        android:textColor="#0066FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Open your Email Inbox (or Spam folder).\n2. Click the official Firebase link in the email.\n3. Tap 'I Have Verified My Email' below."
+                        android:textColor="#333333"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+
+                <!-- Check Verification Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVerifyOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="I Have Verified My Email ✅"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="#0066FF"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Resend Button -->
+                <TextView
+                    android:id="@+id/tvResendOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Didn't receive email? Resend Email Link"
+                    android:textColor="#0066FF"
+                    android:textSize="13.5sp"
+                    android:textStyle="bold"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

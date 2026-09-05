@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>SmartFRS Project Documentation</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
+    
+    @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+    }
+
+    body {
+        font-family: 'Hind Siliguri', 'Inter', sans-serif;
+        color: #0F172A;
+        line-height: 1.6;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-banner {
+        background: linear-gradient(135deg, #0066FF 0%, #0F172A 100%);
+        color: #ffffff;
+        padding: 24px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+    }
+
+    .header-banner h1 {
+        margin: 0 0 8px 0;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    .header-banner p {
+        margin: 0;
+        font-size: 14px;
+        color: #E0EDFF;
+    }
+
+    h2 {
+        color: #0066FF;
+        font-size: 18px;
+        border-bottom: 2px solid #0066FF;
+        padding-bottom: 6px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        color: #0F172A;
+        font-size: 15px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 13px;
+    }
+
+    table, th, td {
+        border: 1px solid #CBD5E1;
+    }
+
+    th {
+        background-color: #F1F5F9;
+        color: #0F172A;
+        font-weight: 700;
+        padding: 10px;
+        text-align: left;
+    }
+
+    td {
+        padding: 8px 10px;
+        color: #334155;
+    }
+
+    .card {
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-left: 4px solid #0066FF;
+        padding: 14px;
+        border-radius: 8px;
+        margin: 12px 0;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 4px;
+        color: #ffffff;
+    }
+
+    .badge-red { background-color: #D32F2F; }
+    .badge-green { background-color: #2E7D32; }
+    .badge-blue { background-color: #0066FF; }
+
+    code, pre {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #F1F5F9;
+        color: #0F172A;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    pre {
+        padding: 12px;
+        overflow-x: auto;
+        border: 1px solid #E2E8F0;
+        display: block;
+        white-space: pre-wrap;
+    }
+
+    ul, ol {
+        margin: 8px 0 14px 20px;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 6px;
+        font-size: 13.5px;
+    }
+
+    .footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 12px;
+        color: #94A3B8;
+        border-top: 1px solid #E2E8F0;
+        padding-top: 12px;
+    }
+</style>
+</head>
+<body>
+
+<div class="header-banner">
+    <h1>✈️ SmartFRS (Smart Flight Reservation System)</h1>
+    <p>📘 টিমের জন্য সম্পূর্ণ টেকনিক্যাল ও ফাংশনাল মাস্টার ডকুমেন্টেশন গাইডবুক</p>
+</div>
+
+<h2>🎯 ১. প্রজেক্ট ওভারভিউ (Project Overview)</h2>
+<p><strong>SmartFRS</strong> হলো একটি আধুনিক <strong>স্মার্ট ফ্লাইট রিজার্ভেশন সিস্টেম (Smart Flight Reservation System)</strong>। এর মূল উদ্দেশ্য হলো ইউজারদের মোবাইল অ্যাপের মাধ্যমে খুব সহজে বিমান সিট নির্বাচন করা, টিকিট কাটার সুযোগ দেওয়া এবং ক্যানসেলেশন প্রসেস সম্পূর্ণ অটোমেটেড করা।</p>
+
+<div class="card">
+    <strong>🌟 প্রজেক্টের মূল ফিচারসমূহ:</strong>
+    <ul>
+        <li><strong>ইউজার অথেন্টিকেশন:</strong> রেজিস্টার ও সিকিউর লগইন ব্যবস্থা।</li>
+        <li><strong>দ্বিমুখী বুকিং ফ্লো:</strong> Search Flight (তারিখ ধরে সার্চ) এবং Booking Flight (সরাসরি সব ফ্লাইট তালিকা)।</li>
+        <li><strong>ভিজ্যুয়াল প্লেন সিট ম্যাপ:</strong> বাসের টিকিটের মতো প্লেনের ৬ সারি × ৪ কলামের ডাইনামিক সিট ম্যাপ।</li>
+        <li><strong>লাল রঙের বুকড সীট:</strong> যেসব সীট আগেই বিক্রি হয়ে গেছে (<span class="badge badge-red">Booked</span>), সেগুলো লাল রঙে ব্লকড থাকে।</li>
+        <li><strong>একসাথে ৪টি টিকিট কাটার সুযোগ:</strong> একজন ইউজার একবারে ১ থেকে ৪টি সীট একসাথে সিলেক্ট করতে পারেন।</li>
+        <li><strong>অটোমেটিক ডায়নামিক দাম হিসাব:</strong> ১টি, ২টি, ৩টি বা ৪টি সীট সিলেক্ট করলে সিস্টেম অটোমেটিক মোট দাম হিসাব করে নেয়।</li>
+        <li><strong>স্মার্ট ৩টি পেমেন্ট অপশন:</strong> bKash, Nagad এবং Bank Card।</li>
+        <li><strong>লাইভ কার্ড টাইপ ডিটেক্টর:</strong> ব্যাংক কার্ড নম্বর টাইপ করার সাথে সাথেই <strong>VISA Card</strong> বা <strong>MasterCard</strong> চেনার রিয়েল-টাইম অটো ডিটেক্টর।</li>
+        <li><strong>ক্লিয়ার কপি আইকনযুক্ত ই-টিকেট:</strong> ডিজিটাল টিকেটে আইডি নম্বর কপি করার জন্য স্মার্ট কপি লোগো 📋 সংজোযন।</li>
+        <li><strong>২৪/৭ AI চ্যাটবট সাপোর্ট:</strong> Google Gemini AI API ইন্টিগ্রেটেড চ্যাটবট যা অ্যাপের প্রতিটি স্ক্রিনে বিদ্যমান।</li>
+    </ul>
+</div>
+
+<h2>🛠️ ২. প্রজেক্টে ব্যবহৃত সকল টুলস ও টেকনোলজিস (Tools & Technologies Used)</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ক্যাটাগরি</th>
+            <th>টুলস / লাইব্রেরি</th>
+            <th>কেন ব্যবহার করা হয়েছে?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>IDE</strong></td>
+            <td>Android Studio</td>
+            <td>অ্যান্ড্রয়েড মোবাইল অ্যাপ্লিকেশন তৈরির মূল IDE।</td>
+        </tr>
+        <tr>
+            <td><strong>অ্যান্ড্রয়েড ভাষা</strong></td>
+            <td>Kotlin</td>
+            <td>আধুনিক, নিরাপদ ও দ্রুত কাজ করার অ্যান্ড্রেয়েড ভাষা।</td>
+        </tr>
+        <tr>
+            <td><strong>UI ফ্রেমওয়ার্ক</strong></td>
+            <td>Material 3 Components</td>
+            <td>কার্ড, বাটন, ইনপুট ফিল্ড ও থিমিংয়ের জন্য।</td>
+        </tr>
+        <tr>
+            <td><strong>ব্যাকএন্ড ফ্রেমওয়ার্ক</strong></td>
+            <td>Python (FastAPI & Uvicorn)</td>
+            <td>উচ্চ গতিসম্পন্ন অসিনক্রোনাস REST API ডেভেলপমেন্টের জন্য।</td>
+        </tr>
+        <tr>
+            <td><strong>ডাটাবেজ ইঞ্জিন</strong></td>
+            <td>Microsoft SQL Server (MSSQL)</td>
+            <td>এন্টারপ্রাইজ লেভেলের শক্তিশালী রিলেশনাল ডাটাবেজ।</td>
+        </tr>
+        <tr>
+            <td><strong>ডাটাবেজ কানেক্টর</strong></td>
+            <td>pyodbc</td>
+            <td>পাইথন ব্যাকএন্ড থেকে SQL Server-এর সাথে যোগাযোগের ড্রাইভার।</td>
+        </tr>
+        <tr>
+            <td><strong>নেটওয়ার্কিং লাইব্রেরি</strong></td>
+            <td>Retrofit 2 & Gson</td>
+            <td>অ্যান্ড্রয়েড অ্যাপ থেকে ব্যাকএন্ডে JSON ডাটা পাঠাতে ও আনতে।</td>
+        </tr>
+        <tr>
+            <td><strong>লোকাল সার্ভার টানেলিং</strong></td>
+            <td>Ngrok (Auto-Tunneling)</td>
+            <td>লোকাল পাইথন সার্ভারকে লাইভ পাবলিক ডোমেইনে প্রকাশ করতে।</td>
+        </tr>
+        <tr>
+            <td><strong>AI সাপোর্ট</strong></td>
+            <td>Google Gemini AI SDK</td>
+            <td>অ্যাপের স্মার্ট AI হেল্পডেসক চ্যাটবটের জন্য।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>🏗️ ৩. প্রজেক্ট ডাটা ফ্লো ও আর্কিটেকচার (Data Flow Architecture)</h2>
+<pre>
+[ Android App (Kotlin UI) ] ➔ (JSON Request via Retrofit) ➔ [ Ngrok HTTPS Tunnel ] 
+                                                                    │
+                                                                    ▼
+[ Microsoft SQL Server (MSSQL) ] ◄── (pyodbc) ◄── [ Python FastAPI Backend ]
+</pre>
+
+<h2>🤖 ৪. ব্যাকএন্ড ও স্মার্ট অটোমেশন (Backend & Smart Ngrok Automation)</h2>
+<p>সাধারণত লোকাল সার্ভারে কাজ করার সময় Ngrok এর লিংক বারবার পরিবর্তন হয় এবং ম্যানুয়ালি কোডে গিয়ে লিংক কপি-পেস্ট করতে হয়। আমাদের প্রজেক্টে এটিকে সম্পূর্ণ অটোমেটেড করা হয়েছে:</p>
+<ul>
+    <li><strong>FRS_Backend.py ফাইলটি ওপেন করলেই:</strong> ব্যাকগ্রাউন্ডে Ngrok চালু হয়ে নতুন লাইভ পাবলিক HTTPS লিংকটি বের করে নেয়।</li>
+    <li><strong>অ্যান্ড্রয়েড প্রজেক্ট অটো-আপডেট:</strong> এটি অ্যান্ড্রেয়েড প্রজেক্টের <code>RetrofitClient.kt</code> ফাইলে গিয়ে <strong>BASE_URL</strong> সোর্স কোডে অটোমেটিক নতুন লিংকটি লিখে দেয়!</li>
+</ul>
+
+<h2>📱 ৫. অ্যান্ড্রেয়েড ফ্রন্টএন্ড কোড স্ট্রাকচার (Android Project Structure)</h2>
+<pre>
+com.example.smartfrs
+ ├── MainActivity.kt           ➔ ইউজার লগইন স্ক্রিন
+ ├── RegisterActivity.kt       ➔ নতুন ইউজার রেজিস্ট্রেশন
+ ├── HomeActivity.kt           ➔ ড্যাশবোর্ড (Search, Booking, Cancel options)
+ ├── SearchFlightActivity.kt   ➔ শহর ও তারিখ অনুযায়ী ফ্লাইট সার্চ
+ ├── FlightListActivity.kt     ➔ সকল ফ্লাইটের বোর্ডিং পাস তালিকা (RecyclerView)
+ ├── FlightAdapter.kt          ➔ ফ্লাইটের কার্ড ভিউ নিয়ন্ত্রণ
+ ├── PassengerInfoActivity.kt  ➔ ভিজ্যুয়াল সিট ম্যাপ (Max 4 seats) ও প্যাসেঞ্জার ফর্ম
+ ├── PaymentActivity.kt        ➔ bKash, Nagad, Bank Card পেমেন্ট ও Auto Card Detector
+ ├── TicketDetailsActivity.kt ➔ ছবি-মিলিত ডিজিটাল ই-টিকেট প্রদর্শন ও Copy 📋
+ ├── CancelTicketActivity.kt   ➔ টিকিট ক্যানসেলেশন ও অটো রিফান্ড
+ ├── SupportActivity.kt        ➔ Google Gemini AI চ্যাটবট সাপোর্ট
+ └── TicketRepository.kt       ➔ লোকাল টিকেটের ডাটা ম্যানেজমেন্ট (SharedPreferences)
+</pre>
+
+<h2>📢 ৬. টিমের জন্য প্রেজেন্টেশন ও ভাইভা উত্তর (Presentation Tips for Viva)</h2>
+<ol>
+    <li><strong>ডাটাবেজ কানেকশন:</strong> "আমরা ব্যাকএন্ডে Python এর FastAPI ফ্রেমওয়ার্ক এবং pyodbc ড্রাইভারের সাহায্যে Microsoft SQL Server-এ টেবিলে ডাটা স্টোর করেছি।"</li>
+    <li><strong>মোবাইল ব্যাকএন্ড যোগাযোগ:</strong> "অ্যাপের Retrofit 2 লাইব্রেরি দিয়ে রিকোয়েস্ট তৈরি হয় এবং Ngrok টানেলের মাধ্যমে ব্যাকএন্ড সার্ভারে পৌঁছে।"</li>
+    <li><strong>ইউনিক ফিচারসমূহ:</strong> "একসাথে ৪টি সিট বুকিংয়ের সুযোগ, লাল রঙে বুকড সিট আইডেন্টিফিকেশন, ভিসা/মাস্টারকার্ড অটো-ডিটেক্টর এবং চ্যাটবট সাপোর্ট।"</li>
+</ol>
+
+<div class="footer">
+    Smart Flight Reservation System (SmartFRS) • Official Team Project Documentation
+</div>
+
+</body>
+</html>

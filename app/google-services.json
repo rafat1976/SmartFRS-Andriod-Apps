@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "254037921725",
+    "project_id": "flight-reservation-app-ec4e7",
+    "storage_bucket": "flight-reservation-app-ec4e7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254037921725:android:3bd4fe113aafc065024cd4",
+        "android_client_info": {
+          "package_name": "com.example.smartfrs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254037921725-jqcvrbsm014ct54sqa03vrjhdtlipl3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5YF3Tad09mOfPITG8xPpjX2T9wcM74Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254037921725-jqcvrbsm014ct54sqa03vrjhdtlipl3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

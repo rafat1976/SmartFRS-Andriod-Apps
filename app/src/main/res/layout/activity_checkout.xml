@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primaryColor"
+        app:title="Payment Checkout"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPnrHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking ID: #PNR123456"
+                        android:textColor="@color/primaryColor"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#DDDDDD"
+                        android:layout_marginVertical="12dp"/>
+
+                    <TextView
+                        android:id="@+id/tvPassengerSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Passenger: Rafat - 017..."
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvFlightSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Biman Bangladesh: 10:00 AM - 11:00 AM"
+                        android:textStyle="bold"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Amount: ৳ 4500.0"
+                        android:gravity="end"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32"
+                        android:layout_marginTop="12dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Payment Method"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Payment Options -->
+            <RadioGroup
+                android:id="@+id/rgPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginBottom="8dp">
+                    <RadioButton
+                        android:id="@+id/rbBkash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bKash"
+                        android:padding="16dp"
+                        android:buttonTint="#D81B60"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginBottom="8dp">
+                    <RadioButton
+                        android:id="@+id/rbNagad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nagad"
+                        android:padding="16dp"
+                        android:buttonTint="#F4511E"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginBottom="8dp">
+                    <RadioButton
+                        android:id="@+id/rbCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Debit/Credit Card"
+                        android:padding="16dp"
+                        android:buttonTint="#1976D2"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmBooking"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:text="Pay &amp; Generate Ticket"
+                android:backgroundTint="#2E7D32"
+                android:textSize="16sp"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

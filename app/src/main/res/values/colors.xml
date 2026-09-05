@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Modern Navy & Blue Palette -->
+    <color name="primaryColor">#0066FF</color>
+    <color name="primaryLightColor">#00D2FF</color>
+    <color name="primaryDarkColor">#0F172A</color>
+
+    <!-- Accent & Brand Highlights -->
+    <color name="accentGold">#FFB300</color>
+    <color name="secondaryColor">#2E7D32</color>
+    <color name="secondaryLightColor">#4CAF50</color>
+
+    <!-- Payment Brand Colors -->
+    <color name="bkashPink">#E2136E</color>
+    <color name="nagadOrange">#F7941D</color>
+    <color name="cardNavy">#1A1A2E</color>
+
+    <!-- Neutral & Surface Colors -->
+    <color name="backgroundColor">#F4F7FB</color>
+    <color name="surfaceColor">#FFFFFF</color>
+    <color name="cardStroke">#E2E8F0</color>
+
+    <color name="textColorPrimary">#0F172A</color>
+    <color name="textColorSecondary">#64748B</color>
+    <color name="errorColor">#D32F2F</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

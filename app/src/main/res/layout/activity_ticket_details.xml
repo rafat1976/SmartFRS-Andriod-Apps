@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0066FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <!-- Title Header in Yellow -->
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-BOARDING PASS"
+            android:textColor="#FFD700"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginTop="10dp" />
+
+        <!-- Pager Indicator Summary (Shown when multiple seats booked) -->
+        <TextView
+            android:id="@+id/tvPagerIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ticket 1 of 1 (Seat 12A)"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ViewPager2 for Boarding Passes -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpBoardingPasses"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:clipChildren="false" />
+
+        <!-- Action Buttons Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Download PDF Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDownloadPdf"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Download Ticket (PDF) 📄"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_pdf_download"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="#FFFFFF"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#2E7D32"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Yellow Main Menu Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackToHome"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Main Menu"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#FFD700" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Persistent AI Support FAB with fixed icon -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_ai_support"
+        app:backgroundTint="#1A1A1A"
+        app:tint="#FFFFFF"
+        android:contentDescription="AI Support" />
+
+</RelativeLayout>

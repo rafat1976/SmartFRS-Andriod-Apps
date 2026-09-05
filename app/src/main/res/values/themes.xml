@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme forcing Light mode for consistent vibrant colors across all physical phones -->
+    <style name="Base.Theme.SmartFRS" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primaryLightColor</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background and Surface. -->
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorOnSurface">@color/textColorPrimary</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
+
+        <!-- Force input fields to stay clean white on all devices -->
+        <item name="editTextColor">#111111</item>
+        <item name="android:editTextColor">#111111</item>
+    </style>
+
+    <style name="Theme.SmartFRS" parent="Base.Theme.SmartFRS" />
+</resources>
